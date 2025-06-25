@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiterio Crédito</title>
+    <style>
+        :root {
+            --azul: #002f6c;
+            --dorado: #e6b800;
+            --gris-fondo: #f5f6fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--azul), #001e3c);
+            color: white;
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.3em;
+            color: #ffd700;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 960px;
+            margin: auto;
+        }
+
+        .destacado {
+            background-color: white;
+            padding: 25px;
+            border-left: 6px solid var(--dorado);
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        .formulario {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--azul);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #004080;
+        }
+
+        footer {
+            text-align: center;
+            background-color: var(--azul);
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Quiterio Crédito</h1>
+        <p>Solicita tu préstamo fácil hasta <strong>$30,000 MXN</strong></p>
+    </header>
+
+    <section>
+        <div class="destacado">
+            <h2>Condiciones de préstamo</h2>
+            <ul>
+                <li>Monto máximo: $30,000 MXN</li>
+                <li>Plazos disponibles: 3, 6 o 12 meses</li>
+                <li>Respuesta en menos de 24 horas</li>
+                <li>Sin buró de crédito (evaluación propia)</li>
+            </ul>
+        </div>
+
+        <div class="benefits">
+            <div class="card">
+                <h3>✔️ Proceso 100% en línea</h3>
+                <p>Solicita desde tu teléfono o computadora sin salir de casa.</p>
+            </div>
+            <div class="card">
+                <h3>✔️ Atención personalizada</h3>
+                <p>Un asesor se pondrá en contacto contigo para resolver tus dudas.</p>
+            </div>
+            <div class="card">
+                <h3>✔️ Sin cargos ocultos</h3>
+                <p>Transparencia total desde el inicio. Sabes cuánto vas a pagar.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Formulario de solicitud</h2>
+        <div class="formulario">
+            <form action="enviar.php" method="POST">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required />
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="monto">Monto solicitado (máx $30,000):</label>
+                <input type="number" id="monto" name="monto" max="30000" required />
+
+                <label for="plazo">Plazo:</label>
+                <select id="plazo" name="plazo" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="3">3 meses</option>
+                    <option value="6">6 meses</option>
+                    <option value="12">12 meses</option>
+                </select>
+
+                <label for="motivo">Motivo del préstamo:</label>
+                <textarea id="motivo" name="motivo" rows="3"
+                    placeholder="Ejemplo: pago de deuda, negocio, salud..."></textarea>
+
+                <button type="submit">Enviar solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 Quiterio Crédito | Contacto: atencion@quiteriocredito.com
+    </footer>
+
+</body>
+
+</html>
